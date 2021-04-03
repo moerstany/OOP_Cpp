@@ -55,6 +55,7 @@ void main()
 
 	Point* pA = &A; //создаем указатель на point
 	cout << pA->x << tab << pA->y << endl;
+
 #endif // STRUCT
 	Point A;
 	A.set_x(2);
