@@ -2,93 +2,93 @@
 using namespace std;
 
 //void FillRand(int arr1[], const int n);
-template <typename T> T** Allocate(const int k, const int l);	//бШДЕКЪЕР ОЮЛЪРЭ ОНД ДХМЮЛХВЕЯЙХИ ЛЮЯЯХБ
+template <typename T> T** Allocate(const int k, const int l);	//Выделяет память под динамический массив
  void FillRand(int** arr, const int k, const int l);
  void FillRand(float** arr, const int k, const int l);
  void FillRand(double** arr, const int k, const int l);
  void FillRand(char** arr, const int k, const int l);
-template <typename T> void Print(T** arr, const int k, const int l);//БШБНДХР ДБСУЛЕПМШИ ДХМЮЛХВЕЯЙХИИ ЛЮЯЯХБ
-template <typename T> void Clear(T** arr, const int k);		//сДЮКЪЕР ДХМЮЛХВЕЯЙХИ ЛЮЯЯХБ
-template <typename T> void push_row_back(T**& arr, int& k, const int l);	//дНАЮБКЪЕР ЯРПНЙС Б ЙНМЕЖ ДБСЛЕПМНЦН ДХМЮЛХВЕЯЙНЦН ЛЮЯЯХБЮ
-//template <typename T> void FillRand1(T arr[], const int l, T maxRand, T minRand);//ЯКСВЮИМШЕ ВХЯКЮ Б ЯРПНЙС
-template <typename T> void push_row_front(T**& arr, int& k, const int l, T& value2);//дНАЮБКЪЕР ЯРПНЙС Б МЮВЮКН ДБСЛЕПМНЦН ДХМЮЛХВЕЯЙНЦН ЛЮЯЯХБЮ
-template <typename T> void insert_row(T**& arr, int& k, const int l, int index2);	//бЯРЮБКЪЕР ЯРПНЙС Б ДБСЛЕПМШИ ДХМЮЛХВЕЯЙХИ ЛЮЯЯХБ ОН ХМДЕЙЯС
-template <typename T> void pop_row_back(T**& arr, int& k, const int l);	//сДЮКЪЕР ЯРПНЙС Я ЙНМЖЮ ддл
-template <typename T> void pop_row_front(T**& arr, int& k, const int l);	//сДЮКЪЕР ЯРПНЙС Я МЮВЮКЮ ддл
-template <typename T> void erase_row(T**& arr, int& k, const int l, int index); //сДЮКЪЕР ЯРПНЙС ОН СЙЮГЮММНЛС ХМДЕЙЯС
-template <typename T> void push_col_back(T** arr, const int k, int& l);	//дНАЮБКЪЕР ЯРНКАЕЖ Б ЙНМЕЖ ддл
-template <typename T> void push_col_front(T** arr, const int k, int& l, T value3);//дНАЮБКЪЕР ЯРНКАЕЖ Б МЮВЮКН ддл
-template <typename T> void insert_col(T** arr, const int k, int& l, T value1, int index1);	//бЯРЮБКЪЕР ЯРНКАЕЖ ОН СЙЮГЮММНЛС ХМДЕЙЯС
-template <typename T> void pop_col_back(T** arr, const int k, int& l); 	//сДЮКЪЕР ЯРНКАЕЖ Б ЙНМЕЖ ддл
-template <typename T> void pop_col_front(T** arr, const int k, int& l); //сДЮКЪЕР ЯРНКАЕЖ Б МЮВЮКН ддл
-template <typename T> void erase_col(T** arr, const int k, int& l, int index4);	//сДЮКЪЕР ЯРНКАЕЖ ОН СЙЮГЮММНЛС ХМДЕЙЯС
+template <typename T> void Print(T** arr, const int k, const int l);//выводит двухмерный динамическийй массив
+template <typename T> void Clear(T** arr, const int k);		//Удаляет динамический массив
+template <typename T> void push_row_back(T**& arr, int& k, const int l);	//Добавляет строку в конец двумерного динамического массива
+//template <typename T> void FillRand1(T arr[], const int l, T maxRand, T minRand);//случайные числа в строку
+template <typename T> void push_row_front(T**& arr, int& k, const int l, T& value2);//Добавляет строку в начало двумерного динамического массива
+template <typename T> void insert_row(T**& arr, int& k, const int l, int index2);	//Вставляет строку в двумерный динамический массив по индексу
+template <typename T> void pop_row_back(T**& arr, int& k, const int l);	//Удаляет строку с конца ДДМ
+template <typename T> void pop_row_front(T**& arr, int& k, const int l);	//Удаляет строку с начала ДДМ
+template <typename T> void erase_row(T**& arr, int& k, const int l, int index); //Удаляет строку по указанному индексу
+template <typename T> void push_col_back(T** arr, const int k, int& l);	//Добавляет столбец в конец ДДМ
+template <typename T> void push_col_front(T** arr, const int k, int& l, T value3);//Добавляет столбец в начало ДДМ
+template <typename T> void insert_col(T** arr, const int k, int& l, T value1, int index1);	//Вставляет столбец по указанному индексу
+template <typename T> void pop_col_back(T** arr, const int k, int& l); 	//Удаляет столбец в конец ДДМ
+template <typename T> void pop_col_front(T** arr, const int k, int& l); //Удаляет столбец в начало ДДМ
+template <typename T> void erase_col(T** arr, const int k, int& l, int index4);	//Удаляет столбец по указанному индексу
 
 typedef char data_type;
 
 //void Print(int arr[], const int n);
-//void insert(int*& arr, int& n, int value, int index);	//бЯРЮБКЪЕР ГМЮВЕМХЕ Б ЛЮЯЯХБ ОН СЙЮГЮММНЛС ХМДЕЙЯС
-//void pop_back(int*& arr, int& n); //СДЮКЪЕР ГМЮВЕМХЕ Б ЙНМЖЕ ЛЮЯЯХБЮ
-//void pop_front(int*& arr, int& n);//СДЮКЪЕР ГМЮВЕМХЕ Б МЮВЮКЕ ЛЮЯЯХБЮ
-//void erase(int*& arr, int& n, int index);//СДЮКЪЕР ГМЮВЕМХЕ ОН ХМДЕЙЯС
+//void insert(int*& arr, int& n, int value, int index);	//Вставляет значение в массив по указанному индексу
+//void pop_back(int*& arr, int& n); //удаляет значение в конце массива
+//void pop_front(int*& arr, int& n);//удаляет значение в начале массива
+//void erase(int*& arr, int& n, int index);//удаляет значение по индексу
 
 #define Probel "**********************************************************"
 
 void main()
 {
 	setlocale(LC_ALL, "Russian");
-	/*int n; //ПЮГЛЕП ЛЮЯЯХБЮ
-	cout << "бБЕДХРЕ ПЮГЛЕП ЛЮЯЯХБЮ: ";  cin >> n;
+	/*int n; //размер массива
+	cout << "Введите размер массива: ";  cin >> n;
 
-	int* arr1 = new int [n] {};//НАЗЪБХКХ ДХМЮЛХВЕЯЙХИ ЛЮЯЯХБ
+	int* arr1 = new int [n] {};//объявили динамический массив
 	FillRand(arr, n);
 	Print(arr, n);
 	int value;
-	cout << "ББЕДХРЕ ДНАЮБКЪЕЛНЕ ГМЮВЕМХЕ: "; cin >> value;
-	//1 БШДЕКХРЭ АКНЙ ОЮЛЪРХ МСФМНЦН ПЮГЛЕПЮ  Х ЯНГДЮЕЛ АСТЕПМШИ ЛЮЯЯХБ МСФМНЦНПЮГЛЕПЮ
+	cout << "введите добавляемое значение: "; cin >> value;
+	//1 выделить блок памяти нужного размера  и создаем буферный массив нужногоразмера
 	int* buffer = new int[n + 1]{};
-	//2 ЙНОХПСЕЛ ХГЛЕМЕМХЪ ХГ ХЯУНДМНЦН ЛЮЯЯХБЮ Б АСТЕПМШИ
+	//2 копируем изменения из исходного массива в буферный
 	for (int i = 0; i < n; i++)
 	{
 		buffer[i] = arr[i];
 	}
-	//3 СДЮКЪЕЛ ХЯУНДМШИ ЛЮЯЯХБ
+	//3 удаляем исходный массив
 	delete[] arr;
-	//4 ОНДЛЕМЪЕЛ ЮДПЕЯ ЯРЮПНЦН ЛЮЯЯХБЮ ЮДПЕЯНЛ МНБНЦН ЛЮЯЯХБЮ
+	//4 подменяем адрес старого массива адресом нового массива
 	arr = buffer;
-	//ГЮОХЯШБЮЕЛ ГМЮВЕМХЕ Б ЙНМЕЖ ЛЮЯЯХБЮ
+	//записываем значение в конец массива
 	arr[n] = value;
-	//6 ОНЯКЕ ДНАЮБКЕМХЪ ПЮГЛЕП ЛЮЯЯХБЮ СБЕКХВХБЮЕРЯЪ МЮ 1
+	//6 после добавления размер массива увеличивается на 1
 	n++;
 	Print(arr, n);
 
 	int index;
-	cout << "ББЕДХРЕ ДНАЮБКЪЕЛНЕ ГМЮВЕМХЕ: "; cin >> value;
-	cout << "ББЕДХРЕ index: "; cin >> index;
+	cout << "введите добавляемое значение: "; cin >> value;
+	cout << "введите index: "; cin >> index;
 	insert(arr, n, value, index);
 	Print(arr, n);
 
-	cout << "СДЮКХКХ ОНЯКЕДМЕЕ ГМЮВЕМХЕ ЛЮЯЯХБЮ: "<<"\n";
+	cout << "удалили последнее значение массива: "<<"\n";
 	pop_back(arr, n);
 	Print(arr, n);
 
-	cout << "СДЮКХКХ ОЕПБНЕ ГМЮВЕМХЕ ЛЮЯЯХБЮ: " << "\n";
+	cout << "удалили первое значение массива: " << "\n";
 	pop_front(arr, n);
 	Print(arr, n);
 
 
-	cout << "ББЕДХРЕ index: "; cin >> index;
-	cout << "СДЮКХКХ  ГМЮВЕМХЕ ЛЮЯЯХБЮ ОН ХМДЕЙЯС: " << "\n";
+	cout << "введите index: "; cin >> index;
+	cout << "удалили  значение массива по индексу: " << "\n";
 	erase(arr, n, index);
 	Print(arr, n);
 
 	delete [] arr;
 	*/
 
-	int k; //ЙНК-БН ЯРПНЙ
-	int l; //ЙНК-БН ЯРНКАЖНБ (ЩКЕЛЕМРШ ЯРПНЙХ)
-	cout << "ББЕДХРЕ ЙНК-БН ЯРПНЙ ДХМЮЛХВЕЯЙНЦН ЛЮЯЯХБЮ: " << "\n"; cin >> k;
-	cout << "ББЕДХРЕ ЙНК-БН ЯНКАЖНБ ДХМЮЛХВЕЯЙНЦН ЛЮЯЯХБЮ: " << "\n"; cin >> l;
-	//1 ЯНГДЮЕЛ ЛЮЯЯХБ СЙЮГЮРЕКЕИ
+	int k; //кол-во строк
+	int l; //кол-во столбцов (элементы строки)
+	cout << "введите кол-во строк динамического массива: " << "\n"; cin >> k;
+	cout << "введите кол-во солбцов динамического массива: " << "\n"; cin >> l;
+	//1 создаем массив указателей
 	
 	data_type** arr= Allocate<data_type>(k,l);
 	
@@ -100,91 +100,91 @@ void main()
 
 	cout << "\n";
 	Probel;
-	cout << "дНАЮБКЪЕЛ ЯРПНЙС Б ЙНМЕЖ ДБСУЛЕПМНЦН ЛЮЯЯХБЮ: " << "\n";
+	cout << "Добавляем строку в конец двухмерного массива: " << "\n";
 	 push_row_back( arr, k, l);
 	//FillRand1(arr[k-1], l,0,50);
 	Print(arr, k, l);
 
 	cout << "\n";
 	Probel;
-	cout << "дНАЮБКЪЕЛ ЯРПНЙС Б МЮВЮКН ДБСУЛЕПМНЦН ЛЮЯЯХБЮ: " << "\n";
+	cout << "Добавляем строку в начало двухмерного массива: " << "\n";
 	data_type value2;
-	cout << "ББЕДХРЕ ДНАЮБКЪЕЛНЕ ГМЮВЕМХЕ: " << "\n"; cin >> value2;
+	cout << "введите добавляемое значение: " << "\n"; cin >> value2;
 	 push_row_front( arr,  k,  l,  value2);
 	//FillRand1(arr[k-1], l,0,50);
 	Print(arr, k, l);
 
 	cout << "\n";
 	Probel;
-	cout << "дНАЮБКЪЕЛ ЯРПНЙС ОН ХМДЕЙЯС Б  ДБСУЛЕПМШИ ЛЮЯЯХБ: " << "\n";
+	cout << "Добавляем строку по индексу в  двухмерный массив: " << "\n";
 	int index2;
-	cout << "ББЕДХРЕ ХМДЕЙЯ: " << "\n"; cin >> index2;
+	cout << "введите индекс: " << "\n"; cin >> index2;
 	 insert_row( arr, k,  l,  index2);
 	//FillRand1(arr[k-1], l,0,50);
 	Print(arr, k, l);
 	
 	cout << "\n";
 	Probel;
-	cout << "СДЮКЪЕЛ ЯРПНЙС Б ЙНМЖЕ ДБСУЛЕПМНЦН ДХМЮЛХВЕЯЙНЦН ЛЮЯЯХБЮ : " << "\n";
+	cout << "удаляем строку в конце двухмерного динамического массива : " << "\n";
 	 pop_row_back(  arr,  k,  l);
 	//FillRand1(arr[k-1], l,0,50);
 	Print(arr, k, l);
 	
 	cout << "\n";
 	Probel;
-	cout << "СДЮКЪЕЛ ЯРПНЙС Б МЮВЮКЕ ДБСУЛЕПМНЦН ДХМЮЛХВЕЯЙНЦН ЛЮЯЯХБЮ : " << "\n";
+	cout << "удаляем строку в начале двухмерного динамического массива : " << "\n";
     pop_row_front ( arr,  k,  l);
 	Print(arr, k, l);
 	
 	cout << "\n";
 	Probel;
-	cout << "СДЮКЪЕЛ ЯРПНЙС ОН ХМДЕЙЯС ДБСУЛЕПМНЦН ДХМЮЛХВЕЯЙНЦН ЛЮЯЯХБЮ: " << "\n";
+	cout << "удаляем строку по индексу двухмерного динамического массива: " << "\n";
 	int index;
-	cout << "ББЕДХРЕ ХМДЕЙЯ: " << "\n"; cin >> index;
+	cout << "введите индекс: " << "\n"; cin >> index;
     erase_row(arr,  k,  l, index);
 	Print(arr, k, l);
 
 	cout << "\n";
 	Probel;
-	cout << "дНАЮБКЪЕЛ ЯРНКАЕЖ Б ЙНМЕЖ ДБСУЛЕПМНЦН ЛЮЯЯХБЮ: " << "\n";
+	cout << "Добавляем столбец в конец двухмерного массива: " << "\n";
 	push_col_back( arr,  k,  l);
 	Print(arr, k, l);
 
 	cout << "\n";
 	Probel;
-	cout << "дНАЮБКЪЕЛ ЯРНКАЕЖ Б МЮВЮКН ДБСУЛЕПМНЦН ЛЮЯЯХБЮ: " << "\n";
+	cout << "Добавляем столбец в начало двухмерного массива: " << "\n";
 	data_type value3;
-	cout << "ББЕДХРЕ ДНАЮБКЪЕЛНЕ ГМЮВЕМХЕ: " << "\n"; cin >> value3;
+	cout << "введите добавляемое значение: " << "\n"; cin >> value3;
 	 push_col_front(  arr,  k,  l,  value3);
 	Print(arr, k, l);
 
 	cout << "\n";
 	Probel;
-	cout << "дНАЮБКЪЕЛ ЯРНКАЕЖ ДБСУЛЕПМНЦН ЛЮЯЯХБЮ ОН ХМДЕЙЯС: " << "\n";
+	cout << "Добавляем столбец двухмерного массива по индексу: " << "\n";
 	data_type value1;
 	int index1;
-	cout << "ББЕДХРЕ ХМДЕЙЯ: " << "\n"; cin >> index1;
-	cout << "ББЕДХРЕ ДНАЮБКЪЕЛНЕ ГМЮВЕМХЕ: " << "\n"; cin >> value1;
+	cout << "введите индекс: " << "\n"; cin >> index1;
+	cout << "введите добавляемое значение: " << "\n"; cin >> value1;
 	insert_col( arr,  k,  l,   value1, index1);
 	Print(arr, k, l);
 
 	cout << "\n";
 	Probel;
-	cout << "СДЮКЪЕЛ ЯРНКАЕЖ Б ЙНМЖЕ ДБСУЛЕПМНЦН ЛЮЯЯХБЮ: " << "\n";
+	cout << "удаляем столбец в конце двухмерного массива: " << "\n";
 	pop_col_back( arr, k,  l);
 	Print(arr, k, l);
 
 	cout << "\n";
 	Probel;
-	cout << "СДЮКЪЕЛ ЯРНКАЕЖ Б МЮВЮКЕ ДБСУЛЕПМНЦН ЛЮЯЯХБЮ: " << "\n";
+	cout << "удаляем столбец в начале двухмерного массива: " << "\n";
 	pop_col_front ( arr, k, l);
 	Print(arr, k, l);
 	
 	cout << "\n";
 	Probel;
-	cout << "СДЮКЪЕЛ ЯРНКАЕЖ ДБСУЛЕПМНЦН ЛЮЯЯХБЮ ОН ХМДЕЙЯС: " << "\n";
+	cout << "удаляем столбец двухмерного массива по индексу: " << "\n";
 	int index4;
-	cout << "ББЕДХРЕ ХМДЕЙЯ: " << "\n"; cin >> index4;
+	cout << "введите индекс: " << "\n"; cin >> index4;
 	erase_col( arr,  k, l,  index4);
 	Print( arr, k, l);
 
@@ -224,7 +224,7 @@ void insert(int*& arr, int& n, int value, int index)
 	{
 		buffer[i+1] = arr[i];
 	}
-	//for (int i = 0; i < n; i++) ЮКЭРЕПМЮРХБНИ 2 ТНПЮЛ ЛНФМН ЯДЕКЮРЭ НОЕПЮЖХЧ РЕПМЮПМХЙНЛ
+	//for (int i = 0; i < n; i++) альтернативой 2 форам можно сделать операцию тернарником
 	//{
 		//(i < index) ? buffer[i]  : buffer[i + 1]) = arr[i];
 	//} 
@@ -236,7 +236,7 @@ void insert(int*& arr, int& n, int value, int index)
 
 void pop_back(int*& arr, int& n)
 {
-	int* buffer = new int[--n];//АСТЕПМШИ ЛЮЯЯХБ МЮ 1 ЛЕМЭЬЕ ГЮДЮММНЦН 
+	int* buffer = new int[--n];//буферный массив на 1 меньше заданного 
 	for (int i = 0; i < n; i++)
 	{
 		buffer[i] = arr[i];
@@ -275,9 +275,9 @@ void erase(int *&arr, int& n, int index)
 
 template <typename T> T** Allocate(const int k, const int l)
 {
-	//1 ЯНГДЮЕЛ ЛЮЯЯХБ СЙЮГЮРЕКЕИ
+	//1 создаем массив указателей
 	T** arr = new T* [k];
-	//2 БШДЕКЪЕЛ ОЮЛЪРЭ ДКЪ ЯРПНЙ ДБСЛЕПМНЦН ДХМЮЛХВЕЯЙНЦН  ЛЮЯЯХБЮ
+	//2 выделяем память для строк двумерного динамического  массива
 	for (int i = 0; i < k; i++)
 	{
 		arr[i] = new T[l];
@@ -288,7 +288,7 @@ template <typename T> T** Allocate(const int k, const int l)
 
 void FillRand(int** arr, const int k, const int l)
 {
-	//3 ПЮАНРЮ Я ДХМЮЛХВЕЯЙХЛ ДБСЛЕПМШЛ ЛЮЯЯХБНЛ
+	//3 работа с динамическим двумерным массивом
 	for (int i = 0; i < k; i++)
 	{
 		for (int j = 0; j < l; j++)
@@ -300,7 +300,7 @@ void FillRand(int** arr, const int k, const int l)
 }
 void FillRand(float** arr, const int k, const int l)
 {
-	//3 ПЮАНРЮ Я ДХМЮЛХВЕЯЙХЛ ДБСЛЕПМШЛ ЛЮЯЯХБНЛ
+	//3 работа с динамическим двумерным массивом
 	for (int i = 0; i < k; i++)
 	{
 		for (int j = 0; j < l; j++)
@@ -312,7 +312,7 @@ void FillRand(float** arr, const int k, const int l)
 }
 void FillRand(double** arr, const int k, const int l)
 {
-	//3 ПЮАНРЮ Я ДХМЮЛХВЕЯЙХЛ ДБСЛЕПМШЛ ЛЮЯЯХБНЛ
+	//3 работа с динамическим двумерным массивом
 	for (int i = 0; i < k; i++)
 	{
 		for (int j = 0; j < l; j++)
@@ -325,7 +325,7 @@ void FillRand(double** arr, const int k, const int l)
 }
 void FillRand(char** arr, const int k, const int l)
 {
-	//3 ПЮАНРЮ Я ДХМЮЛХВЕЯЙХЛ ДБСЛЕПМШЛ ЛЮЯЯХБНЛ
+	//3 работа с динамическим двумерным массивом
 	for (int i = 0; i < k; i++)
 	{
 		for (int j = 0; j < l; j++)
@@ -360,16 +360,16 @@ template <typename T> void Clear(T** arr, const int k)
 template <typename T> void push_row_back(T**& arr, int& k, const int l)
 
 {
-	T** buffer = new T* [k+1];//ЯНГДЮКХ АСТТЕПМШИ ЛЮЯЯХБ СЙЮГЮРЕКЕИ
+	T** buffer = new T* [k+1];//создали буфферный массив указателей
 	
-	for (int i = 0; i < k; i++)//ЙНОХПСЕЛ ЮДПЕЯЮ ЯРПНЙ ХЯУНДМНЦН ЛЮЯЯХБЮ Б АСТЕПМШИ
+	for (int i = 0; i < k; i++)//копируем адреса строк исходного массива в буферный
 	{
 		buffer[i] = arr[i];
 	}
-	delete [] arr; //СДЮКЪЕЛ ХЯУНДМШИ ЛЮЯЯХБ СЙЮГЮРЕКЕИ
-	arr = buffer;//АСТТЕП ЩРН МНБШИ ЛЮЯЯХБ
-	buffer[k] = new T[l] {}; //ДНАЮБХКХ ЯРПНЙС
-	//ОНЯКЕ ДНАЮБКЕМЪ ЯРПНЙХ Б ЛЮЯЯХБ ЙНК БН ЕЦН ЯРПНЙ СБЕКХВХБЮЕЛ МЮ 1
+	delete [] arr; //удаляем исходный массив указателей
+	arr = buffer;//буффер это новый массив
+	buffer[k] = new T[l] {}; //добавили строку
+	//после добавленя строки в массив кол во его строк увеличиваем на 1
 	k++;
 }
 
@@ -392,13 +392,13 @@ template <typename T> void push_row_front(T**& arr, int& k, const int l, T& valu
 		
 	for (int i = 0; i < k; i++)
 	{
-		buffer[0][i] = value2; //ДНАЮБХКХ ЯРПНЙС
+		buffer[0][i] = value2; //добавили строку
 	}
 	
 delete[] arr;
-	arr = buffer;//АСТТЕП ЩРН МНБШИ ЛЮЯЯХБ
+	arr = buffer;//буффер это новый массив
 	
-	//ОНЯКЕ ДНАЮБКЕМЪ ЯРПНЙХ Б ЛЮЯЯХБ ЙНК БН ЕЦН ЯРПНЙ СБЕКХВХБЮЕЛ МЮ 1
+	//после добавленя строки в массив кол во его строк увеличиваем на 1
 	k++;
 }
 
@@ -418,27 +418,27 @@ template <typename T> void insert_row(T**& arr, int& k, const int l, int index2)
 	
 	delete[] arr;
 
-	arr = buffer;//АСТТЕП ЩРН МНБШИ ЛЮЯЯХБ
+	arr = buffer;//буффер это новый массив
 	arr[index2] = new T[l]{};
 	//for (int i = 0; i < k; i++)
 	//{
-		//arr[index][i] = new int [l] {}; //ДНАЮБХКХ ЯРПНЙС
+		//arr[index][i] = new int [l] {}; //добавили строку
 	//}
 	
-	//ОНЯКЕ ДНАЮБКЕМЪ ЯРПНЙХ Б ЛЮЯЯХБ ЙНК БН ЕЦН ЯРПНЙ СБЕКХВХБЮЕЛ МЮ 1
+	//после добавленя строки в массив кол во его строк увеличиваем на 1
 	k++;
 }
 
 template <typename T> void pop_row_back(T**& arr, int& k, const int l)
 {
-	T** buffer = new T* [--k];//ЯНГДЮКХ АСТТЕПМШИ ЛЮЯЯХБ СЙЮГЮРЕКЕИ
-	for (int i = 0; i < k; i++)//ЙНОХПСЕЛ ЮДПЕЯЮ ЯРПНЙ ХЯУНДМНЦН ЛЮЯЯХБЮ Б АСТЕПМШИ
+	T** buffer = new T* [--k];//создали буфферный массив указателей
+	for (int i = 0; i < k; i++)//копируем адреса строк исходного массива в буферный
 	{
 		buffer[i] = arr[i];
 	}
-	delete[] arr[k]; //СДЮКЪЕЛ ОНЯКЕДМЧЧ ЯРПНЙС ХГ ОЮЛЪРХ
-	delete[] arr;//СДЮКЪЕЛ ЛЮЯЯХБ СЙЮГЮРЕКЕИ
-	arr = buffer;//ОНДЛЕМЪЕЛ МЮ МНБШИ ЛЮЯЯХБ СЙЮГЮРЕКЕИ 
+	delete[] arr[k]; //удаляем последнюю строку из памяти
+	delete[] arr;//удаляем массив указателей
+	arr = buffer;//подменяем на новый массив указателей 
 }
 
 template <typename T> void pop_row_front(T**& arr, int& k, const int l)
@@ -476,18 +476,18 @@ template <typename T> void erase_row(T**& arr, int& k, const int l, int index)
 template <typename T> void push_col_back(T** arr, const int k, int& l)
 {
 	for (int i = 0; i < k; i++)
-	{//ЯНГДЮЕЛ АСТЕПМСЧ ЯРПНЙС МСФМНЦН ПЮГЛЕПЮ
+	{//создаем буферную строку нужного размера
 		T* buffer = new T[l + 1]{};
 
-		// ЙНОХПСЕЛ ХЯУНДМШЕ ЯРПНЙХ Б АСТТЕП
+		// копируем исходные строки в буффер
 		for (int j = 0; j < l; j++)
 		{
 
 			buffer[j] = arr[i][j];
 		}
-	delete[] arr[i]; //СДЮКЪЕЛ ХЯУНДМСЧ ЯРПНЙС
+	delete[] arr[i]; //удаляем исходную строку
 	arr[i] = buffer;
-		//ДНАЮБХКХ ЯРНКАХЙ
+		//добавили столбик
 	}
 	l++;
 }
@@ -495,18 +495,18 @@ template <typename T> void push_col_back(T** arr, const int k, int& l)
 template <typename T> void push_col_front(T** arr, const int k, int& l, T value3)
 {
 	for (int i = 0; i < k; i++)
-	{//ЯНГДЮЕЛ АСТЕПМСЧ ЯРПНЙС МСФМНЦН ПЮГЛЕПЮ
+	{//создаем буферную строку нужного размера
 		T* buffer = new T[l + 1]{};
 
-		// ЙНОХПСЕЛ ХЯУНДМШЕ ЯРПНЙХ Б АСТТЕП
+		// копируем исходные строки в буффер
 		for (int j = 0; j < l; j++)
 		{
 			(j > 0) ? buffer[j] = arr[i][j-1] : buffer[j] = value3;
 			
 		}
-		delete[] arr[i]; //СДЮКЪЕЛ ХЯУНДМСЧ ЯРПНЙС
+		delete[] arr[i]; //удаляем исходную строку
 		arr[i] = buffer;
-		//ДНАЮБХКХ ЯРНКАХЙ
+		//добавили столбик
 	}
 	l++;
 }
@@ -514,10 +514,10 @@ template <typename T> void push_col_front(T** arr, const int k, int& l, T value3
 template <typename T> void insert_col(T** arr, const int k, int& l, T value1, int index1)
 {
 	for (int i = 0; i < k; i++)
-	{//ЯНГДЮЕЛ АСТЕПМСЧ ЯРПНЙС МСФМНЦН ПЮГЛЕПЮ
+	{//создаем буферную строку нужного размера
 		T* buffer = new T[l + 1]{};
 
-		// ЙНОХПСЕЛ ХЯУНДМШЕ ЯРПНЙХ Б АСТТЕП
+		// копируем исходные строки в буффер
 		for (int j = 0; j < l; j++)
 		{
 			if (j > index1)  buffer[j] = arr[i][j - 1];
@@ -525,9 +525,9 @@ template <typename T> void insert_col(T** arr, const int k, int& l, T value1, in
 			if (j < index1) buffer[j] = arr[i][j];
 
 		}
-		delete[] arr[i]; //СДЮКЪЕЛ ХЯУНДМСЧ ЯРПНЙС
+		delete[] arr[i]; //удаляем исходную строку
 		arr[i] = buffer;
-		//ДНАЮБХКХ ЯРНКАХЙ
+		//добавили столбик
 	}
 	l++;
 }
@@ -535,18 +535,18 @@ template <typename T> void insert_col(T** arr, const int k, int& l, T value1, in
 template <typename T> void pop_col_back(T** arr, const int k, int& l)
 {
 	for (int i = 0; i < k; i++)
-	{//ЯНГДЮЕЛ АСТЕПМСЧ ЯРПНЙС МСФМНЦН ПЮГЛЕПЮ
+	{//создаем буферную строку нужного размера
 		T* buffer = new T[l - 1]{};
 
-		// ЙНОХПСЕЛ ХЯУНДМШЕ ЯРПНЙХ Б АСТТЕП
+		// копируем исходные строки в буффер
 		for (int j = 0; j < l-1; j++)
 		{
 
 			buffer[j] = arr[i][j];
 		}
-		delete[] arr[i]; //СДЮКЪЕЛ ХЯУНДМСЧ ЯРПНЙС
+		delete[] arr[i]; //удаляем исходную строку
 		arr[i] = buffer;
-		//СДЮКХКХ ЯРНКАХЙ
+		//удалили столбик
 	}
 	l--;
 }
@@ -554,18 +554,18 @@ template <typename T> void pop_col_back(T** arr, const int k, int& l)
 template <typename T> void pop_col_front(T** arr, const int k, int& l)
 {
 	for (int i = 0; i < k; i++)
-	{//ЯНГДЮЕЛ АСТЕПМСЧ ЯРПНЙС МСФМНЦН ПЮГЛЕПЮ
+	{//создаем буферную строку нужного размера
 		T* buffer = new T[l - 1]{};
 
-		// ЙНОХПСЕЛ ХЯУНДМШЕ ЯРПНЙХ Б АСТТЕП
+		// копируем исходные строки в буффер
 		for (int j = 0; j < l; j++)
 		{
 			if (j > 0)  buffer[j-1] = arr[i][j];
 			
 		}
-		delete[] arr[i]; //СДЮКЪЕЛ ХЯУНДМСЧ ЯРПНЙС
+		delete[] arr[i]; //удаляем исходную строку
 		arr[i] = buffer;
-		//СДЮКХКХ ЯРНКАХЙ
+		//удалили столбик
 	}
 	l--;
 
@@ -574,19 +574,19 @@ template <typename T> void pop_col_front(T** arr, const int k, int& l)
 template <typename T> void erase_col(T** arr, const int k, int& l, int index4)
 {
 	for (int i = 0; i < k; i++)
-	{//ЯНГДЮЕЛ АСТЕПМСЧ ЯРПНЙС МСФМНЦН ПЮГЛЕПЮ
+	{//создаем буферную строку нужного размера
 		T* buffer = new T[l - 1]{};
 
-		// ЙНОХПСЕЛ ХЯУНДМШЕ ЯРПНЙХ Б АСТТЕП
+		// копируем исходные строки в буффер
 		for (int j = 0; j < l; j++)
 		{
 			if (j > index4)  buffer[j-1] = arr[i][j];
 			if (j < index4) buffer[j] = arr[i][j];
 
 		}
-		delete[] arr[i]; //СДЮКЪЕЛ ХЯУНДМСЧ ЯРПНЙС
+		delete[] arr[i]; //удаляем исходную строку
 		arr[i] = buffer;
-		//ДНАЮБХКХ ЯРНКАХЙ
+		//добавили столбик
 	}
 	l--;
 }
